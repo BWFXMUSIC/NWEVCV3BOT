@@ -57,16 +57,24 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="𝐀𝐝𝐝 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=f"{config.SUPPORT_GROUP}"
-            )
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/akki_203"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="", callback_data="close"
             )
         ],
     ]
@@ -123,16 +131,24 @@ def telegram_markup_timer(_, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="𝐀𝐝𝐝 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=f"{config.SUPPORT_GROUP}"
-            )
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/akki_203"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="", callback_data="close"
             )
         ],
     ]
@@ -158,19 +174,27 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="𝐀𝐝𝐝 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=f"{config.SUPPORT_GROUP}"
-            )
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/akki_203"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="", callback_data="close"
             )
         ],
-    ]
+               ]
     return buttons
 
 
@@ -193,68 +217,27 @@ def telegram_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="𝐀𝐝𝐝 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=f"{config.SUPPORT_GROUP}"
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/akki_203"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="", callback_data="close"
             )
         ],
-        [
-            InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
-            )
-        ],
-    ]
-    return buttons
-
-
-## Search Query Inline
-
-
-def track_markup(_, videoid, user_id, channel, fplay):
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=_["P_B_1"],
-                callback_data=f"MusicStream {videoid}|{user_id}|a|{channel}|{fplay}",
-            ),
-            InlineKeyboardButton(
-                text=_["P_B_2"],
-                callback_data=f"MusicStream {videoid}|{user_id}|v|{channel}|{fplay}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"],
-                callback_data=f"forceclose {videoid}|{user_id}",
-            )
-        ],
-    ]
-    return buttons
-
-## Live Stream Markup
-
-
-def livestream_markup(_, videoid, user_id, mode, channel, fplay):
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=_["P_B_3"],
-                callback_data=f"LiveStream {videoid}|{user_id}|{mode}|{channel}|{fplay}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["S_B_3"],
-                url=f"{config.SUPPORT_GROUP}",
-            ),
-            InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"],
-                callback_data=f"forceclose {videoid}|{user_id}",
-            ),
-        ]
-    ]
+                ]
     return buttons
 
 ## wtf
@@ -354,16 +337,24 @@ def queue_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="𝐀𝐝𝐝 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=f"{config.SUPPORT_GROUP}"
-            )
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/akki_203"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="", callback_data="close"
             )
         ],
     ]
@@ -389,16 +380,24 @@ def telegram_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="𝐀𝐝𝐝 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭",
+                text="🌼 ᴘʟᴀʏʟɪsᴛs",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="📝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=f"{config.SUPPORT_GROUP}"
-            )
+                text="✨ 𝐎ωиєя ⏎", url=f"https://t.me/akki_203"
+            ),
+        ],
+        [
+           InlineKeyboardButton(
+                text="💮︎ ᴄᴘᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL,
+            ),
+           InlineKeyboardButton(
+                text="⛩️ Gʀᴏᴜᴘꨄ︎ ⛩️", url=config.SUPPORT_GROUP,
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="", callback_data="close"
             )
         ],
     ]
