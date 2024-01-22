@@ -72,7 +72,7 @@ async def cancel_spam(client, message):
         is_admin = False
     else:
         if participant.status in ("administrator", "creator"):
-            is_admin = True
+            is_admin:
     if not is_admin:
         return await message.reply("This command is only for admins. You can't use this command.")
     else:
