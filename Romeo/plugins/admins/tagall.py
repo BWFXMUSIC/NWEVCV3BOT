@@ -40,7 +40,7 @@ async def tag_all_users(_,message):
             if message.chat.id not in SPAM_CHATS:
                 break 
             usernum += 1
-            usertxt += f"\n⊚ [{m.user.first_name}](tg://user?id={m.user.id})\n"
+            usertxt += f"\n💌 [{m.user.first_name}](tg://user?id={m.user.id})\n"
             if usernum == 5:
                 await app.send_message(message.chat.id,f'{text}\n{usertxt}')
                 await asyncio.sleep(2)
@@ -51,16 +51,23 @@ async def tag_all_users(_,message):
         except Exception:
             pass        
            
-@app.on_message(filters.command("cancel") & ~filters.private)
-async def cancelcmd(_, message):
-    chat_id = message.chat.id
-    if chat_id in SPAM_CHATS:
-        try :
-            SPAM_CHATS.remove(chat_id)
-        except Exception:
-            pass   
-        return await message.reply_text("**ᴛᴀɢ ᴀʟʟ sᴜᴄᴄᴇssғᴜʟʟʏ sᴛᴏᴘᴘᴇᴅ!**")     
-                                     
-    else :
-        await message.reply_text("**ɴᴏ ᴘʀᴏᴄᴇss ᴏɴɢᴏɪɴɢ!**")  
-        return       
+@app.on_message(filters.command(["cancel", "stop"]))
+async def cancel_spam(client, message):
+    if not message.chat.id in spam_chats:
+        return await message.reply("No active mention process is started by me.")
+    is_admin = False
+    try:
+        participant = await client.get_chat_member(message.chat.id, message.from_user.id)
+    except UserNotParticipant:
+        is_admin = False
+    else:
+        if participant.status in ("administrator", "creator"):
+            is_admin = True
+    if not is_admin:
+        return await message.reply("This command is only for admins. You can't use this command.")
+    else:
+        try:
+            spam_chats.remove(message.chat.id)
+        except:
+            pass
+        return await message.reply("♦ Mention process stopped ♦")
