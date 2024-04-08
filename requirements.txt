@@ -9,11 +9,10 @@ heroku3
 httpx
 lyricsgenius
 motor
-numpy
 OpsAi
 pillow==9.5.0
 psutil
-py-tgcalls
+git+https://github.com/BWFXMUSIC/pytgcalls
 ntgcalls
 pykeyboard
 pyrogram==2.0.106
@@ -26,4 +25,5 @@ spotipy
 tgcrypto
 youtube-search
 youtube-search-python
-yt-dlp
+telegraph
+git+https://github.com/yt-dlp/yt-dlp
