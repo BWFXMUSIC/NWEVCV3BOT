@@ -12,7 +12,6 @@ motor
 OpsAi
 pillow==9.5.0
 psutil
-git+https://github.com/BWFXMUSIC/pytgcalls
 ntgcalls
 pykeyboard
 pyrogram==2.0.106
